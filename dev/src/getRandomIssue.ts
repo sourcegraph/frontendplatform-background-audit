@@ -38,8 +38,13 @@ const getIssues = async (): Promise<void> => {
         return
     }
 
+    // 2 week old tickets
+    const age = parseInt(process.env.MINIMUM_AGE, 10) || 0;
+    const date = new Date();
+    date.setDate(date.getDate() - age);
+
     // step 2 get issues without estimates that are on ${team}
-    const query = `repo:"sourcegraph/sourcegraph" is:issue is:open label:${team} -label:${estimates} -label:"sourcegraph-refinement-bot" sort:updated-desc no:assignee -label:tracking`
+    const query = `repo:"sourcegraph/sourcegraph" is:issue is:open label:${team} -label:${estimates} -label:"sourcegraph-refinement-bot" sort:updated-desc no:assignee -label:tracking created:<=${date.toISOString()}`
     let issue = {}
     await octokit.paginate('GET /search/issues', { q: query, per_page: 1 }, (response, done) => {
         // get first one

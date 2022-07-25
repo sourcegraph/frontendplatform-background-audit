@@ -39,6 +39,7 @@ jobs:
         env:
           REFINEMENT_BOT: ${{ secrets.REFINEMENT_BOT }}
           TEAM: "team/frontend-platform"
+          MINIMUM_AGE: 14
         run: |
           npx ts-node getRandomIssue.ts
       - name: Generate Slack Message
