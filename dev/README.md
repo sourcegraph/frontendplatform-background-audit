@@ -17,3 +17,4 @@ This concept is still very much in Alpha 0 and is being tested with Frontend pla
   - Inbound Scripts (receiving from slack)
     - Utilizes refinement-bot/actions
     - Leverages a firebase function to issue responses
+Hello World
