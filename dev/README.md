@@ -2,7 +2,7 @@
 
 ### Description:
 
-Prototype Github Action to allow Frontend Platorm to refine async style. Works by utilizing github actions to send messages in slack combined with a firebase function to receive responses from the slack bot and update github accordingly.
+Prototype GitHub Action to allow Frontend Platorm to refine async style. Works by utilizing github actions to send messages in slack combined with a firebase function to receive responses from the slack bot and update github accordingly.
 
 This concept is still very much in Alpha 0 and is being tested with Frontend platform only. Feel free to reach out to #frontend-platform if there are any issues
 
